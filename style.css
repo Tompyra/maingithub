@@ -1,0 +1,676 @@
+*{
+    margin:0;
+    padding:0;
+    font-family: sans-serif;
+}
+body{
+    font-size: 12px;
+    
+    background: #f1f1f1;
+}
+.popup-container {
+    display:none;
+    position:fixed;
+    z-index:100;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    background:rgba(0,0,0,0.3);
+    transition:all 0.4s;
+}
+.popup-container .popup { 
+    width:300px;
+    padding:4rem 2rem;
+    background:#fff;
+    border-radius:15px;
+    position:absolute;
+    top:50%;
+    left:50%;
+    text-align:center;
+    transform:translateX(-50%) translateY(-50%);
+}
+.bokapop .popup-container .popup {
+    width:auto;
+    
+}
+.bokapop .popup-container .popup, .bokapop .popup-container .popup .sub-content {
+    background:transparent;
+}
+
+.popup-container .popup * { 
+    margin:1rem 1rem;
+    font-size:1.3rem;
+}
+.popup-container .popup h2 {
+    font-size:2rem;
+    text-transform:uppercase;
+}
+
+.popup-open .popup-container {
+    display: block;
+}
+
+/* FORMS */
+.form-group input {
+ width:100%;
+ padding:1rem;
+ font-size: 1.2rem;
+ margin-top: 0.7rem;
+}
+.form-group label{
+    font-weight: bold;
+    font-size: 1.2rem;
+
+}
+.form-group button{
+
+    padding:1rem 4rem;
+    text-transform:uppercase;
+    border-radius:5px;
+    background:#222;
+    color:#fff;
+}
+
+
+.header{
+    position:relative;
+    background: rgba(30,144,255,0.1);
+}
+
+.banneromoss{
+    /*
+    width:100%;
+    height:calc(50vh);
+    min-height: 350px;
+    background-image: linear-gradient(rgba(0,0,0,0.15),rgba(0,0,0,0.55))
+    ,url(plats.jpg);
+    background-size: cover;
+    position:relative;
+    background-position: center;
+    */
+}
+
+.banneromoss .content{
+    width: 100%;
+    position: absolute;
+    top:50%;
+    transform:translateY(-50%);
+    text-align:center;
+    color:#fff;
+}
+
+.banner{
+    width:100%;
+    height:calc(50vh);
+    min-height: 350px;
+    background-image: linear-gradient(rgba(0,0,0,0.35),rgba(0,0,0,0.75))
+    ,url(glasses.png);
+    background-size: cover;
+    position:relative;
+    background-position: center;
+}
+
+.banner.subpage {
+    height:calc(30vh);
+    min-height: 250px;
+}
+.banner .content{
+    width: 100%;
+    position: absolute;
+    top:50%;
+    transform:translateY(-50%);
+    text-align:center;
+    color:#fff;
+}
+
+.logo {
+    width:60px;
+    transition:all 0.9s;
+}
+.logo:hover {
+    transform:rotate(720deg);
+}
+.navbar {
+    width: 85%;
+    margin:auto;
+    padding:10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+
+}
+.navbar ul {
+    position:absolute;
+    transform:scaleY(0);
+    transform-origin:top;
+    opacity:0;
+    transition:all .4s;
+    width:calc(100% - 4rem);
+    background:#fff;
+    padding:0 2rem;
+    padding-top:2rem;
+    
+    z-index:10;
+    top: 80px;
+    left:0;
+}
+
+.navbar ul li{
+    list-style: none;
+    display:block;
+    margin: 20px 0;
+    position:relative;
+    text-align: center;
+
+}
+.navbar ul li.active a {
+    font-weight:bold;
+}
+.navbar ul li.menu-btn:after {
+    content:none!IMPORTANT;
+}
+.navbar ul li.menu-btn a {
+    padding: 1rem 2.6rem;
+    border: 1px solid;
+}
+.navbar ul li.menu-btn a:hover {
+    background:#222;
+    color:#fff;
+}
+
+.navbar ul li a
+{
+    font-size: 1.4rem;
+    text-decoration: none;
+    color:#444;
+    text-transform: uppercase;
+    transition: 0.5s;
+    display:block;
+}
+
+.navbar ul li::after, .navbar ul li::before
+{
+    content:none;
+    
+}
+.middle-content {
+    font-size:1.6rem;
+}
+.navbar ul li a:hover 
+{
+   color:#222;
+   transform:translateY(-5px);
+
+}
+.toggle-menu {
+    padding:0.4rem;
+    border: none;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width:60px;
+    height:50px;
+    background:transparent;
+    border: 1px solid rgba(0,0,0,0.3);
+    
+}
+.menu-open ul {
+    opacity:1;
+    transform:scaleY(1);
+}
+
+.toggle-menu:hover {
+    cursor: pointer;
+}
+.toggle-menu > span {
+    width:100%;
+    background:#222;
+    height:3px;
+    transition:.4s;
+    
+}
+
+
+.content h1{
+    font-size: 2rem;
+   
+}
+
+.content p{
+    margin:20px auto;
+    font-weight: 100;
+    line-height: 25px;
+    font-size: 1.2rem;
+}
+
+.btn{
+    width:200px;
+    padding: 15px 0;
+    text-align: center;
+    margin:20px 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    border:2px solid #009688;
+    background:transparent;
+    color:#fff;
+    cursor:pointer;
+    position: relative;
+    overflow: hidden;
+
+}
+
+.btn >  span{
+    background: #009688;
+    height: 100%;
+    width: 0;
+    border-radius: 25px;
+    position: absolute;
+    left:0;
+    bottom:0;
+    z-index:-1;
+    transition: 0.5s;
+}
+
+.btn:hover span{
+    width: 100%;
+}
+
+/*
+
+*/
+.sub-content {
+    display:flex;
+    flex-direction: column;
+    align-self: center;
+    background:rgba(30,144,255,0.1);
+
+}
+
+.sub-content-boka {
+   
+}
+.sub-content div {
+    overflow:hidden;
+    transition:0.3s;
+    margin:1rem;
+    padding:2rem;
+    background:rgb(247, 244, 244);
+    box-shadow:0 15px 25px rgba(0,0,0,0.1);
+    border:1px solid rgba(0,0,0,0.1);
+}
+.sub-content div:hover {
+    box-shadow:0 15px 40px rgba(0,0,0,0.1);
+    border:1px solid rgba(0,0,0,0.5);
+}
+.sub-content a:hover img {
+    transform:scale(1.1);
+}
+.sub-content img {
+    width:200px;
+    transition:0.2s;
+    align-self: center;
+}
+.sub-content a {
+    text-decoration: none;
+    
+}
+/* background, colours*/
+.bg-primary {
+    background:rgba(30,144,255,0.1);
+}
+.bg-secondary {
+    background:antiquewhite;
+}
+
+.bg-three {
+    background:antiquewhite;
+}
+/*
+!Important overide
+Margins, paddings etc
+*/
+.p-2 {
+    padding:4rem!IMPORTANT;
+    font-style: italic!IMPORTANT;
+    font-size:25px;
+    
+    
+}
+.py-4 {
+    padding-top:4rem!IMPORTANT;
+    padding-bottom:4rem!IMPORTANT;
+}
+.py-8 {
+    padding-top:8rem!IMPORTANT;
+    padding-bottom:8rem!IMPORTANT;
+}
+.my-4 {
+    margin-top:4rem!IMPORTANT;
+    margin-bottom:4rem!IMPORTANT;
+}
+.text-lg {
+    font-size:1.6rem;
+}
+.mb-2 {
+
+    margin-bottom:2rem!IMPORTANT;
+}
+.sub-content a p{
+    color:#222;
+    font-size:1.4rem;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    margin-bottom:2rem;
+}
+
+.flex-column {
+    display:flex;
+    flex-direction: column;
+}
+.flex-lg-row {
+    display:flex;
+    flex-direction: column;
+}
+.align-self-center {
+    align-self:center;
+}
+.text-center {
+    text-align:center;
+}
+.container--sm {
+    max-width:768px;
+    margin:0 auto;
+    line-height: 1.6rem;
+    font-size: 1.2rem;
+}
+
+/*
+Animations
+*/
+@keyframes logo {
+    0% {
+        transform:scale(0);
+    }
+    
+    100% {
+        transform:scale(1) rotate(360deg);
+    }
+}
+.logo.animate {
+    animation-name:logo;
+    animation-delay:0;
+    animation-iteration-count: infinite;
+    animation-duration:1s;
+}
+@keyframes h1 {
+    0% {
+        opacity:0;
+        color:black;
+        font-size:2rem;
+    }
+    
+    100% {
+        color:white;
+        opacity:1;
+        font-size:4rem;
+    }
+}
+.content h1 {
+    animation-name:h1;
+    animation-duration:2s;
+}
+
+
+  /* SLIDESHOW */
+  * {box-sizing:border-box}
+
+  /* Slideshow container */
+  .slideshow {
+    max-width: 100%;
+    max-height:calc(90vh - 100px);
+    min-height:calc(90vh - 100px);
+    overflow-y:hidden;
+    position: relative;
+    margin: 0 auto;
+    
+  }
+  .slideshow > div {
+      height:100%;
+      background-repeat: no-repeat!IMPORTANT;
+      background-size:cover!IMPORTANT;
+      background-position: center!IMPORTANT;
+      background-attachment: fixed!IMPORTANT;
+  }
+  .slideshow > div:before { 
+    content:"";
+    position:absolute;
+    width:100%;
+    height:100%;
+    left:0;
+    top:0;
+    z-index:1;
+    background:rgba(0,0,0,0.25);
+  }
+  .slideshow > div:nth-child(1) {
+      background:url(staff.jpg);
+      
+  }
+  .slideshow > div:nth-child(2) {
+    background:url(ingång.JPG);
+    
+}
+.slideshow > div:nth-child(3) {
+    background:url(tjej,jpg);
+    
+}
+  /* Hide the images by default */
+  .mySlides {
+    display: none;
+  }
+  
+  /* Next & previous buttons */
+  .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 41%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: dark;
+    font-weight: bold;
+    z-index:999;
+    font-size:1.6rem;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    padding:1rem;
+    border:1px solid rgba(0,0,0,0.1);
+    background:rgba(255,255,255,0.5);
+  }
+  
+  /* Position the "next button" to the right */
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover, .next:hover {
+    background:rgba(255,255,255,0.9);
+    /*transform:;*/
+  }
+  
+  /* Caption text */
+  .slideshow .text {
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translateX(-50%) translateY(-50%);
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    font-size:3rem;
+    z-index:2;
+    width: 100%;
+    text-align: center;
+  }
+  
+  /* Number text (1/3 etc) */
+  .numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+  }
+  
+  /* The dots/bullets/indicators */
+  .dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+  
+  .active, .dot:hover {
+    
+  }
+  
+  /* Fading animation */
+  .fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  
+  @-webkit-keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  }
+  
+  @keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  }
+
+/*SLUT SLIDESHOW*/ 
+
+.custom-subtom > div:nth-child(1) {
+    background:url(plats.jpg);
+    background-size:cover;
+    width:100%;
+    height:350px;
+}
+
+/*Responsiv*/
+@media only screen and (min-width: 991px ){
+    .middle-content {
+        font-size:2rem;
+    }
+    .content p{
+        
+        font-size: 1.8rem;
+    }
+    .toggle-menu {
+        display:none;
+    }
+    .logo {
+        width:150px;
+    }
+    .content h1{
+        font-size: 4rem;
+       
+    }
+    .navbar {
+        width: 85%;
+        margin:auto;
+        padding:10px 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    
+    }
+    .navbar ul {
+        position:relative;
+        top:auto;
+        width:auto;
+        background:transparent;
+        padding-top:0;
+        opacity:1;
+        transform:scaleY(1);
+    }
+    .navbar ul li{
+        text-align: left;
+        list-style: none;
+        display:inline-block;
+        margin: 0 20px;
+        position:relative;
+    }
+    .navbar ul li::after
+    {
+        content:'';
+        height: 3px;
+        width: 0;
+        background:rgb(30,144,255);
+        position:absolute;
+        left:0;
+        bottom:-10px;
+        transition: 0.5s;
+    }
+    .navbar ul li:hover::after
+    {
+        width:100%;
+    }
+    .navbar ul li.active:after {
+        width:100%;
+    }
+    
+    .navbar ul li a:hover 
+    {
+        color:#222;
+        transform:translateY(0);
+
+    }
+    .sub-content {
+        padding:4rem 0;
+        display:flex;
+        flex-direction: row;
+        justify-content:center;
+    }
+    .sub-content div {
+        overflow:hidden;
+        transition:0.3s;
+        margin:1rem;
+        padding:2rem;
+        background:rgb(247, 244, 244);
+        box-shadow:0 15px 25px rgba(0,0,0,0.1);
+        border:1px solid rgba(0,0,0,0.1);
+    }
+    .sub-content div:hover {
+        box-shadow:0 15px 40px rgba(0,0,0,0.1);
+        border:1px solid rgba(0,0,0,0.5);
+    }
+    .sub-content a:hover img {
+        transform:scale(1.1);
+    }
+    .sub-content img {
+        width:300px;
+        transition:0.2s;
+    }
+
+    .custom-subtom > div:nth-child(1) {
+       overflow:hidden;
+        width:100%;
+        background-position:center;
+        height:550px;
+    }
+    
+}

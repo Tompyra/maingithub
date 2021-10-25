@@ -1,0 +1,108 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=
+     initial-scale=1.0">
+    <title>foreyes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="body">
+    <div class="popup-container">
+        <div class="popup">
+            <h2>Tack för din bokning!</h2>
+            <p class="firstname-pop"></p>
+            <p class="lastname-pop"></p>
+            <p > <span class="phone-pop"></span></p>
+            <h2>Välkommen den <span class="date-pop"></span> MVH <br>foreyes </h2>
+                
+            <button type="submit" class="boka-close">Stäng</button>
+        </div>
+    </div>
+    <header class="header">
+        <div class="navbar">
+            <img src="Logga4.png" class ="logo ">
+            <div class="middle-content"> </div>
+            <button class="toggle-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul>
+                <li><a href="foreyes.html">Hem</a></li>
+                <li><a href="Omoss.html">OM OSS</a></li> 
+                <li><a href="kontakt.html">KONTAKT</a></li>    
+            </ul>
+        </div>
+
+
+        
+    </header>
+
+    <div class="banner subpage">
+        <div class="content">
+            <h1>Boka</h1>
+        </div>
+    </div>
+
+ 
+    <section class="bg-secondary">
+        <form class="flex-column py-4 container--sm" id="form" method="get" action="">
+            <div class="form-group mb-2">
+                <label>Välj datum</label>
+                <input class="date" type="date" />
+            </div>
+            <div class="form-group mb-2">
+                <label></label>
+                <input class="firstname" type="text" placeholder="Förnamn" />
+            </div>
+            <div class="form-group mb-2">
+                <label></label>
+                <input class="lastname" type="text" placeholder="Efternamn" />
+            </div>
+            <div class="form-group mb-2">
+                <label>Ditt telefonnummer</label>
+                <input  class="phone" type="text" placeholder="Ditt telefonnummer" />
+            </div>
+            <div class="form-group text-center">
+                <button role="button" class="boka">Boka</button>
+            </div>
+            
+        </form>
+    </section>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="js.js"></script>
+<script>
+    jQuery(document).ready(function ($) {
+       
+        /* on form submit */
+        $('#form').submit(function(){
+            return false;
+        });
+        /*error message*/
+       
+        $('.phone').change(function(){
+           
+        });
+        
+        $('.boka').click(function(){
+            //....       
+            $('.firstname-pop').html($('.firstname').val());
+            $('.lastname-pop').html($('.lastname').val());
+            $('.date-pop').html($('.date').val());
+            $('.phone-pop').html($('.phone').val());
+
+            $('.body').addClass('popup-open'); 
+            
+        });
+        $('.boka-close, .popup-container').click(function(){
+            
+            $('.body').removeClass('popup-open');
+           
+        });
+        
+    });
+</script>
+</body>
+</html>
